@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% form_theme formArticle 'bootstrap_5_layout.html.twig' %}
+{% block title %}Création d'un nouvel Article
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Création d'un nouvel Article</h1>
+
+		{{ form_start(formArticle) }}
+
+		{{ form_row(formArticle.title, {'label': 'Titre'}) }}
+		{{ form_row(formArticle.content, {'label': 'Contenu'}) }}
+		{{ form_row(formArticle.image, {'label': 'URL de votre Image'}) }}
+		{{ form_row(formArticle.category, {'label': 'Catégorie'}) }}
+
+		<button type="submit">
+			{% if(editMode) %}
+				Mettre à jour
+			{% else %}
+				Créer l'article</button>
+		{% endif %}
+		{{ form_end(formArticle) }}
+	</div>
+{% endblock %}

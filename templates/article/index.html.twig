@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste des Articles
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des Articles</h1>
+
+	{% for article in articles %}
+		<article>
+			<h2>{{ article.title }}</h2>
+			<p>{{ article.content | raw}}</p>
+			{% if article.image is not null %}
+				<img src="{{ asset('uploads/' ~ article.image) }}" alt="{{ article.title }}">
+			{% endif %}
+			<p>Catégorie:
+				{{ article.category.title }}</p>
+			<p>Publié le
+				{{ article.createdAt|date('d/m/Y H:i:s') }}</p>
+			<a href="{{ path('article_show', {'id': article.id}) }}">
+				<button>Lire la suite</button>
+			</a>
+		</article>
+		<hr>
+	{% endfor %}
+{% endblock %}

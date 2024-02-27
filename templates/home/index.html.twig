@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>Mon Blog - Accueil</title>
+			<style>
+				body {
+					font-family: 'Arial', sans-serif; /* Choisir une police de caractères */
+					line-height: 1.6; /* Espacement des lignes entre les paragraphes */
+					color: #333; /* Couleur du texte */
+				}
+
+				p {
+					margin-bottom: 10px; /* Espacement en bas de chaque paragraphe */
+					text-align: justify; /* Justifier le texte dans les paragraphes */
+				}
+			</style>
+		</head>
+		<body>
+
+			<header>
+				<h1>Mon Blog</h1>
+			</header>
+
+			<nav></nav>
+
+			<section>
+				<p>Bienvenue sur Mon Blog !</p>
+				<p>Commencez à créer vos articles dès maintenant.</p>
+
+			</section>
+			<section>
+				<img src="{{ asset('Blog.jpg') }}" alt="Blog Image">
+			</section>
+
+
+		</body>
+	</html>
+{% endblock %}
